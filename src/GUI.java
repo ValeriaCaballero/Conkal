@@ -169,7 +169,7 @@ public class GUI extends JFrame {
 				String textcor = textField_correo.getText();
 				String textped = textField_pedido.getText();
 
-				//OBJETO 
+				
 				Persona objpersona = new Persona(textnom,textcor,textped); 
 				JOptionPane.showMessageDialog(btnObjeto, "Mi objeto tiene lo siguiente:"+ ""+ objpersona, null, JOptionPane.INFORMATION_MESSAGE);
 				
