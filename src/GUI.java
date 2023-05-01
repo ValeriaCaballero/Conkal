@@ -123,7 +123,7 @@ public class GUI extends JFrame {
 		JButton btnLeer = new JButton("Leer");
 		btnLeer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Esteban
+				//Esteban leer
 				
 				String texto= "";
 				try {
