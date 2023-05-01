@@ -116,14 +116,13 @@ public class GUI extends JFrame {
 					}
 			}
 		});
-		btnESCRIBIR.setFont(new Font("Tw Cen MT", Font.BOLD, 11));
+		btnESCRIBIR.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
 		btnESCRIBIR.setBounds(55, 273, 89, 23);
 		contentPane.add(btnESCRIBIR);
 		
 		JButton btnLeer = new JButton("Leer");
 		btnLeer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Esteban leer
 				
 				String texto= "";
 				try {
@@ -147,8 +146,40 @@ public class GUI extends JFrame {
 				
 				
 		});
-		btnLeer.setFont(new Font("Tw Cen MT", Font.BOLD, 11));
+		btnLeer.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
 		btnLeer.setBounds(227, 274, 89, 23);
 		contentPane.add(btnLeer);
+		
+		JButton btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField_nombre.setText("");
+				textField_correo.setText("");
+				textField_pedido.setText("");
+			}
+		});
+		btnLimpiar.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
+		btnLimpiar.setBounds(227, 308, 89, 23);
+		contentPane.add(btnLimpiar);
+		
+		JButton btnObjeto = new JButton("Objeto");
+		btnObjeto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String textnom = textField_nombre.getText();
+				String textcor = textField_correo.getText();
+				String textped = textField_pedido.getText();
+
+				//OBJETO 
+				Persona objpersona = new Persona(textnom,textcor,textped); 
+				JOptionPane.showMessageDialog(btnObjeto, "Mi objeto tiene lo siguiente:"+ ""+ objpersona, null, JOptionPane.INFORMATION_MESSAGE);
+				
+				
+			}
+		});
+		btnObjeto.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
+		btnObjeto.setBounds(378, 273, 89, 23);
+		contentPane.add(btnObjeto);
+		
+		
 	}
 }
