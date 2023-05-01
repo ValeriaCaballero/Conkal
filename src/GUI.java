@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -117,5 +119,36 @@ public class GUI extends JFrame {
 		btnESCRIBIR.setFont(new Font("Tw Cen MT", Font.BOLD, 11));
 		btnESCRIBIR.setBounds(55, 273, 89, 23);
 		contentPane.add(btnESCRIBIR);
+		
+		JButton btnLeer = new JButton("Leer");
+		btnLeer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				String texto= "";
+				try {
+					BufferedReader in = new BufferedReader(new FileReader("MEDICINAS.txt"));
+					String linea = in.readLine();
+					
+					while(linea!=null)
+					{
+					texto =texto + linea+ '\n';
+					linea = in.readLine();
+					}
+					JOptionPane.showMessageDialog(btnLeer, texto);
+				
+					in.close();
+				}catch(IOException exception) {
+					System.out.println(exception.getMessage());
+				}
+					
+			}
+				
+				
+				
+		});
+		btnLeer.setFont(new Font("Tw Cen MT", Font.BOLD, 11));
+		btnLeer.setBounds(227, 274, 89, 23);
+		contentPane.add(btnLeer);
 	}
 }
