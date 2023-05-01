@@ -98,9 +98,9 @@ public class GUI extends JFrame {
 					BufferedWriter  out =new BufferedWriter(new FileWriter("PEDIDOS.txt"));
 					String  textNom = textField_nombre.getText();
 					String textCor = textField_correo.getText();
-					String textPed = textField_pedido.getText();
+					String textPedido = textField_pedido.getText();
 					
-					String  cadena = ("Cliente:" + " " + textNom + " " + "  " + "Correo electrónico:" + "  " + textCor + " " + "Pedido:" + " " + textPed );
+					String  cadena = ("Cliente:" + " " + textNom + " " + "  " + "Correo electrónico:" + "  " + textCor + " " + "Pedido:" + " " + textPedido );
 				    
 					
 					out.newLine();
