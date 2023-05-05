@@ -27,11 +27,6 @@ public class GUI extends JFrame {
 	private JTextField textField_correo;
 	private JTextField textField_pedido;
 	
-	
-	
-	
-	// * INSTANCIA * // 
-	Metodos met = new Metodos(); 
 
 	/**
 	 * Launch the application.
