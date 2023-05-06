@@ -234,7 +234,7 @@ public class GUI extends JFrame {
 				String textPedido =comboBox.getSelectedItem().toString();
 				
 				Persona objpersona = new Persona(textNom,textCor,textPedido); 
-				JOptionPane.showMessageDialog(btnObjeto, "Mi objeto tiene lo siguiente:"+ ""+ objpersona, null, JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(contentPane, "Mi objeto tiene lo siguiente:"+ ""+ objpersona, null, JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		btnObjeto.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
@@ -244,7 +244,7 @@ public class GUI extends JFrame {
 		JButton btnComprar = new JButton("Elegir");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int num = Integer.parseInt(JOptionPane.showInputDialog(btnComprar, "¿Cuál es la cantidad quiere comprar?"));
+				int num = Integer.parseInt(JOptionPane.showInputDialog(contentPane, "¿Cuál es la cantidad quiere comprar?"));
 				int total = seleccionado.getPrecio() * num; 
 				
 				lblTOTAL.setText(String.valueOf(total));
