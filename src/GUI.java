@@ -24,6 +24,11 @@ import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.ImageIcon;
 
+
+//Balam Batun Maria del Carmen
+//Barrera Vazquez Esteban
+//Caballero Góngora Valeria Isabel 
+
 @SuppressWarnings("unused")
 public class GUI extends JFrame {
 
@@ -260,7 +265,6 @@ public class GUI extends JFrame {
 		imagen.setIcon(new ImageIcon("Media/Zanahoria2.png"));
 		imagen.setBounds(443, 23, 83, 92);
 		contentPane.add(imagen);
-		//LOGO
 		
 		}
 	}//ULTIMO
