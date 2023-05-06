@@ -22,6 +22,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import javax.swing.ImageIcon;
 
 @SuppressWarnings("unused")
 public class GUI extends JFrame {
@@ -187,7 +188,7 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String texto= "";
 				try {
-					BufferedReader in = new BufferedReader(new FileReader("MEDICINAS.txt"));
+					BufferedReader in = new BufferedReader(new FileReader("PEDIDOS.txt"));
 					String linea = in.readLine();
 					
 					while(linea!=null)
@@ -254,6 +255,11 @@ public class GUI extends JFrame {
 		btnComprar.setBackground(new Color(128, 128, 255));
 		btnComprar.setBounds(354, 232, 77, 23);
 		contentPane.add(btnComprar);
+		
+		JLabel imagen = new JLabel("");
+		imagen.setIcon(new ImageIcon("Media/Zanahoria2.png"));
+		imagen.setBounds(443, 23, 83, 92);
+		contentPane.add(imagen);
 		
 		
 		}
