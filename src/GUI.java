@@ -122,22 +122,16 @@ public class GUI extends JFrame {
 		lblprecio.setBounds(255, 213, 61, 14);
 		contentPane.add(lblprecio);
 		
-		JButton btnComprar = new JButton("Elegir");
-		btnComprar.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
-		btnComprar.setBackground(new Color(128, 128, 255));
-		btnComprar.setBounds(354, 232, 77, 23);
-		contentPane.add(btnComprar);
+		JLabel lblTOTAL = new JLabel("...");
+		lblTOTAL.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTOTAL.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
+		lblTOTAL.setBounds(192, 265, 83, 14);
+		contentPane.add(lblTOTAL);
 		
 		JLabel lblPrecioTotal = new JLabel("Precio Total");
 		lblPrecioTotal.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
 		lblPrecioTotal.setBounds(100, 265, 110, 14);
 		contentPane.add(lblPrecioTotal);
-		
-		JLabel lblprecio_total = new JLabel("...");
-		lblprecio_total.setHorizontalAlignment(SwingConstants.CENTER);
-		lblprecio_total.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
-		lblprecio_total.setBounds(255, 266, 61, 14);
-		contentPane.add(lblprecio_total);
 		
 		JLabel lblColocaElNmero = new JLabel("Coloca el número de piezas a comprar");
 		lblColocaElNmero.setFont(new Font("Tw Cen MT", Font.PLAIN, 15));
@@ -165,11 +159,12 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					BufferedWriter  out =new BufferedWriter(new FileWriter("PEDIDOS.txt"));
-					
+					String textTotal= lblTOTAL.getText();
 					String textNom = textField_nombre.getText();
 					String textCor = textField_correo.getText();
 					String textPedido =comboBox.getSelectedItem().toString();
-					String cadena = ("Cliente:" + " " + textNom + " " + "  " + "Correo electrónico:" + "  " + textCor + " " + "Pedido:" + " " + textPedido );
+					String cadena = ("Cliente:" + " " + textNom + " " + "  " + "Correo electrónico:" + "  " 
+					+ textCor + " " + "Pedido:" + " " + textPedido+ " El total de la compra es: "+ textTotal );
 				
 				
 				out.newLine();
@@ -221,7 +216,7 @@ public class GUI extends JFrame {
 				textField_correo.setText("");
 				
 				lblprecio.setText(null); 
-				lblprecio_total.setText(null); 
+				lblTOTAL.setText(null); 
 			}
 		});
 		btnLimpiar.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
@@ -244,6 +239,21 @@ public class GUI extends JFrame {
 		btnObjeto.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
 		btnObjeto.setBounds(378, 307, 89, 23);
 		contentPane.add(btnObjeto);
+		
+		JButton btnComprar = new JButton("Elegir");
+		btnComprar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int num = Integer.parseInt(JOptionPane.showInputDialog(btnComprar, "¿Cuál es la cantidad quiere comprar?"));
+				int total = seleccionado.getPrecio() * num; 
+				
+				lblTOTAL.setText(String.valueOf(total));
+				
+			}
+		});
+		btnComprar.setFont(new Font("Tw Cen MT", Font.BOLD, 15));
+		btnComprar.setBackground(new Color(128, 128, 255));
+		btnComprar.setBounds(354, 232, 77, 23);
+		contentPane.add(btnComprar);
 		
 		
 		}
