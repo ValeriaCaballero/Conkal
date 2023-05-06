@@ -260,7 +260,7 @@ public class GUI extends JFrame {
 		imagen.setIcon(new ImageIcon("Media/Zanahoria2.png"));
 		imagen.setBounds(443, 23, 83, 92);
 		contentPane.add(imagen);
-		
+		//LOGO
 		
 		}
 	}//ULTIMO
